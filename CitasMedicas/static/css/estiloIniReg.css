@@ -1,0 +1,36 @@
+
+.container > div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    margin: 2% 4% 0;
+    border: 0;
+    background-color: #0197D4;
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 10%;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: white;
+    color: #0197D4;
+}
+
+button:hover a{
+    color: #0197D4;
+}
+a{
+    text-decoration: none;
+    color: white;
+}

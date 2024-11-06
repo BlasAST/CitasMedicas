@@ -1,0 +1,33 @@
+
+figure{
+    width: 7rem;
+}
+img{
+    width: 100%;
+}
+body{
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+}
+button{
+    margin-right: 1rem;
+    border: 0;
+    background-color: #0197D4;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: white;
+    color: #0197D4;
+}
+
