@@ -13,24 +13,7 @@ div > div{
 
 button{
     margin: 2% 4% 0;
-    border: 0;
-    background-color: #0197D4;
-    color: white;
     padding: 1rem;
     font-size: 2rem;
-    border-radius: 10%;
-    transition: 0.5s;
-}
 
-button:hover{
-    background-color: white;
-    color: #0197D4;
-}
-
-button:hover a{
-    color: #0197D4;
-}
-a{
-    text-decoration: none;
-    color: white;
 }

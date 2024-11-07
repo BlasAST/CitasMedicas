@@ -1,0 +1,47 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main form{
+    background-color: white;
+    border-radius: 10px;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.main form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main form div > a{
+    margin: 0 0.5rem;
+}
+form button{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 50px;
+}
+form a{
+    font-size: 0.8rem;
+}
+form input{
+    height: 2rem;
+}
+
+.main form .no{
+    flex-direction: row;
+}

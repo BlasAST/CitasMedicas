@@ -11,3 +11,24 @@ body{
     /* font-family: "Raleway"; */
 }
 
+button{
+    border: 0;
+    background-color: #0197D4;
+    color: white;
+    border-radius: 10%;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: white;
+    color: #0197D4;
+}
+
+button:hover a{
+    color: #0197D4;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+

@@ -1,0 +1,30 @@
+{% extends 'partials/main.html'%}
+{% block moreStyles %}
+    <title>Inicio de Sesión Sanidad Madrid</title>
+    <link rel="stylesheet" href="../static/css/estiloLoginyRegister.css">
+{% endblock %}
+{% block container%}
+<div class="main">
+    <figure><img src="../static/imgs/logoSanidad.png" alt=""></figure>
+    <form action="/user" method="get">
+        <div>
+            <div>
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario">
+            </div>
+            <div>
+                <label for="contrasenia">Contraseña</label>
+                <input type="password" name="contrasenia">
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </div>
+        <div>
+            <a href="/registrarse">Registrarse</a>
+            <a href="/lostpass">¿Has olvidado la contraseña?</a>
+            <a href="/">Volver</a>
+        </div>
+    </form>
+</div>
+
+
+{%endblock%}
