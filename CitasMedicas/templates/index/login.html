@@ -6,7 +6,7 @@
 {% block container%}
 <div class="main">
     <figure><img src="../static/imgs/logoSanidad.png" alt=""></figure>
-    <form action="/user" method="get">
+    <form method="get">
         <div>
             <div>
                 <label for="usuario">Usuario:</label>
@@ -16,7 +16,7 @@
                 <label for="contrasenia">Contraseña</label>
                 <input type="password" name="contrasenia">
             </div>
-            <button type="submit">Iniciar Sesión</button>
+            <button type="submit" id="submit">Iniciar Sesión</button>
         </div>
         <div>
             <a href="/registrarse">Registrarse</a>
