@@ -7,6 +7,12 @@ function iniciar(){
     if(window.location.pathname=='/logReg'){
         redirecciones2();
     }
+    if(window.location.pathname=='/inicioSesion'){
+        redirecciones3();
+    }
+    if(window.location.pathname=='/registrarse'){
+        redirecciones4();
+    }
 }
 
 function redirecciones1(){
@@ -24,4 +30,14 @@ function redirecciones2(){
     botones[1].addEventListener("click",()=>{
         window.location.href=("/registrarse")
     })
+}
+
+
+function redirecciones3(){
+        
+}
+
+
+function redirecciones4(){
+
 }

@@ -2,11 +2,12 @@
 {% block moreStyles %}
     <title>Registro Sanidad Madrid</title>
     <link rel="stylesheet" href="../static/css/estiloLoginyRegister.css">
+    <script src="static/js/registro.js"></script>
 {% endblock %}
 {% block container%}
 <div class="main">
     <figure><img src="../static/imgs/logoSanidad.png" alt=""></figure>
-    <form action="/createUser" method="get">
+    <form method="get">
         <div>
             <div>
                 <label for="nombre">Nombre:</label>
@@ -36,7 +37,7 @@
                 <label for="contrasenia2">Repite la contraseña:</label>
                 <input type="password" name="contrasenia2">
             </div>
-            <button type="submit">Registrarse</button>
+            <button type="submit" id="submit">Registrarse</button>
         </div>
         <div>
             <a href="/inicioSesion">Iniciar Sesión</a>

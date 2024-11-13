@@ -2,11 +2,16 @@
 {% block moreStyles %}
     <title>Inicio de Sesión Sanidad Madrid</title>
     <link rel="stylesheet" href="../static/css/estiloLoginyRegister.css">
+    <script src="static/js/inicioSesion.js"></script>
 {% endblock %}
 {% block container%}
 <div class="main">
     <figure><img src="../static/imgs/logoSanidad.png" alt=""></figure>
-    <form action="/loginUser" method="get">
+
+
+
+    <form method="get">
+
         <div>
             <div>
                 <label for="usuario">Usuario:</label>
@@ -16,7 +21,7 @@
                 <label for="contrasenia">Contraseña</label>
                 <input type="password" name="contrasenia">
             </div>
-            <button type="submit">Iniciar Sesión</button>
+            <button id="submit">Iniciar Sesión</button>
         </div>
         <div>
             <a href="/registrarse">Registrarse</a>
