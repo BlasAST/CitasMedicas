@@ -1,12 +1,12 @@
 import mysql.connector
 from mysql.connector import Error
 
-def conexion():
+def conectado():
     try:
         connection = mysql.connector.connect(
             host = 'localhost',
-            database = 'CitasMedicas',
-            user = 'root',
+            database = 'citasmedicas',
+            user = 'localhost',
             password = ''
         )
         if connection.is_connected():

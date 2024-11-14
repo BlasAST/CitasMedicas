@@ -1,1 +1,1 @@
-from conexion import conexion
+from database.conexion import conectado

@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
 
-from flask_session import Session
+# from flask_session import Session
 from controllers.loginYRegister import LoginYRegistro
 app = Flask(__name__,template_folder="templates",static_url_path="/static")
-Session(app)
-app.config['SECRET_KEY'] = 'supersecreto'
-app.config['SESSION_TYPE'] = 'filesystem'
+# Session(app)
+# app.config['SECRET_KEY'] = 'supersecreto'
+# app.config['SESSION_TYPE'] = 'filesystem'
 loginRegister_controller = LoginYRegistro()
 @app.route('/')
 def index():
@@ -22,7 +22,7 @@ def inicioSesion():
 
 # * Ruta formulario inicioSesion
 @app.route("/loginUser", methods=['GET'] )
-def iniciarSesion():
+def ini():
     usuario = request.args.get('usuario')
     contrasenia = request.args.get('contrasenia')
     loginRegister_controller.login(usuario,contrasenia)
@@ -33,7 +33,7 @@ def registrarse():
 
 # * Ruta formulario registro usuario
 @app.route("/createUser", methods=['GET'])
-def registrarse():
+def regi():
     nombre = request.args.get('nombre')
     apellidos = request.args.get('apellidos')
     dni = request.args.get('dni')
@@ -45,13 +45,14 @@ def registrarse():
     
 # ? Ruta recuperar contraseña y recopilación de datos para enviar correo de recuperación
 @app.route("/lostpass")
-def lostPass():
+def contraseniaPerdida():
     return render_template("index/lostPassword.html")
 
 # * Ruta de recuperación de cuenta
 @app.route("/lostPassword", methods=['GET'])
 def lostPass():
     recuperar = request.args.get('recuperar')
+    loginRegister_controller.recuperar(recuperar)
 
 if __name__ == '__main__':
     app.run(debug=True)
