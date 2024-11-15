@@ -25,7 +25,8 @@ def inicioSesion():
 def ini():
     usuario = request.args.get('usuario')
     contrasenia = request.args.get('contrasenia')
-    loginRegister_controller.login(usuario,contrasenia)
+    resultado = loginRegister_controller.login(usuario,contrasenia)
+    return resultado
 # ? Ruta registrarse y recopilación de datos para registrarlos en la base de datos
 @app.route("/registrarse")
 def registrarse():

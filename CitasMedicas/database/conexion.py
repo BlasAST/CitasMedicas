@@ -6,7 +6,7 @@ def conectado():
         connection = mysql.connector.connect(
             host = 'localhost',
             database = 'citasmedicas',
-            user = 'root',
+            user = 'localhost',
             password = ''
         )
         if connection.is_connected():
