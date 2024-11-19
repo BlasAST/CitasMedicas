@@ -19,11 +19,14 @@ function formularioEnviado(){
 
 
 async function envioFormularioInicioSesion(user,contrasenia){
+    try{
         let resultado = await fetch("/loginUser?usuario="+ user + "&contrasenia="+contrasenia);
         if(!resultado) throw new Error("Ha ocurrido un problema en el inicio de sesión");
-        console.log(resultado)
-        // let datos= await resultado.json();
-        // comprobacionInicioSesion(datos);
+        let datos = await resultado.json();
+        console.log(datos);
+    }catch (error){
+        console.log(error)
+    }
 }
 
 

@@ -6,8 +6,8 @@ def conectado():
         connection = mysql.connector.connect(
             host = 'localhost',
             database = 'citasmedicas',
-            user = 'localhost',
-            password = ''
+            user = '1234',
+            password = '1234'
         )
         if connection.is_connected():
             db_info = connection.get_server_info()
