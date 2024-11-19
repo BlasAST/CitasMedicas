@@ -6,11 +6,13 @@ class LoginYRegistro():
         pass
         # Consulta a la base de datos de si encuentra el usuario y devuelve confirmación si si
     def login(self,usuario,contrasenia): 
-        my.execute("SELECT * from usuarios where usuario = %s and contrasenia = %s",(usuario,contrasenia))
-        if my.fetchone():
-            return {'resultado':True}
+        my.reset()
+        my.execute("SELECT id from usuarios where usuario = %s and contrasenia = %s",(usuario,contrasenia))
+        resultado=my.fetchall()
+        if resultado:
+            return {'id':resultado[0][0]}
         else:
-            return {'resultado':False}
+            return {'id':False}
         # Insertar nuevos datos de un usuario en la base de datos y asi poder pasar el login
     def register(self,nombre,apellidos,dni,fechaNacimiento,usuario,contrasenia):
         

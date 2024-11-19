@@ -23,7 +23,8 @@ async function envioFormularioInicioSesion(user,contrasenia){
         let resultado = await fetch("/loginUser?usuario="+ user + "&contrasenia="+contrasenia);
         if(!resultado) throw new Error("Ha ocurrido un problema en el inicio de sesión");
         let datos = await resultado.json();
-        console.log(datos);
+        console.log(datos.estado);
+        saludar()
     }catch (error){
         console.log(error)
     }
@@ -31,5 +32,5 @@ async function envioFormularioInicioSesion(user,contrasenia){
 
 
 function comprobacionInicioSesion(datos){
-    console.log(datos);
+    
 }

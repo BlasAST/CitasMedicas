@@ -1,11 +1,13 @@
-from flask import Flask, render_template, request , jsonify
-# from flask_session import Session
+from flask import Flask, render_template, request , jsonify, session
+from flask_session import Session
 from controllers.loginYRegister import LoginYRegistro
 from database.migrations import migraciones
 app = Flask(__name__,template_folder="templates",static_url_path="/static")
-# Session(app)
-# app.config['SECRET_KEY'] = 'supersecreto'
-# app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SECRET_KEY'] = 'supersecreto'
+Session(app)
+
+
 loginRegister_controller = LoginYRegistro()
 migraciones()
 @app.route('/')
@@ -27,7 +29,11 @@ def ini():
     usuario = request.args.get('usuario')
     contrasenia = request.args.get('contrasenia')
     resultado = loginRegister_controller.login(usuario,contrasenia)
-    return jsonify(resultado)
+    if resultado['id'] != False:
+        session['user']=resultado['id']
+        return jsonify({'estado':True})
+    else:
+        return jsonify({'estado':False})
 # ? Ruta registrarse y recopilación de datos para registrarlos en la base de datos
 @app.route("/registrarse")
 def registrarse():

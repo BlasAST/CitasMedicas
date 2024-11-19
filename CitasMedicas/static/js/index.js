@@ -41,3 +41,7 @@ function redirecciones3(){
 function redirecciones4(){
 
 }
+
+function saludar(){
+    console.log("Hola funciono correctamente");
+}
