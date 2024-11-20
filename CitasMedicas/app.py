@@ -65,5 +65,10 @@ def lostPass():
     recuperar = request.args.get('recuperar')
     loginRegister_controller.recuperar(recuperar)
 
+
+@app.route("/home")
+def home():
+    return render_template("home/home.html")
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,9 +2,13 @@ window.addEventListener("DOMContentLoaded",iniciar)
 
 function iniciar(){
     if(window.location.pathname=='/'){
+        // Primera redireccion de la pagina de inicio a seleccion de
+        // Inicio de sesión o registro
         redirecciones1();
     }
     if(window.location.pathname=='/logReg'){
+        // Redireccion segun se pulse el boton de inicio de sesión o register
+        // Las redirecciones de los formularios se realizan mediantes enlaces en html
         redirecciones2();
     }
     if(window.location.pathname=='/inicioSesion'){
@@ -25,10 +29,10 @@ function redirecciones1(){
 function redirecciones2(){
     let botones= document.querySelectorAll(".botones");
     botones[0].addEventListener("click",()=>{
-        window.location.href=("/inicioSesion")
+        window.location.href="/inicioSesion";
     })
     botones[1].addEventListener("click",()=>{
-        window.location.href=("/registrarse")
+        window.location.href="/registrarse";
     })
 }
 
@@ -42,6 +46,8 @@ function redirecciones4(){
 
 }
 
-function saludar(){
-    console.log("Hola funciono correctamente");
+
+// Redireccion para llevar al portal cuando se ha realizado correctamente la autentificación
+function redireccionHome(){
+    window.location.href="/home";
 }
