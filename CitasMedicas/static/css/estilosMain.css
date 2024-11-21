@@ -3,10 +3,10 @@ body,figure{
 }
 
 body{
-    background-color: rgba(0, 0, 0, 0.445);
+    
     cursor: url(../imgs/cursor.svg), auto;
-    background-image: url(../imgs/FondoOscuro.png);
-    background-size: 100vw;
+    /* background-image: url(../imgs/FondoOscuro.png); */
+    /* background-size: 100vw; */
     font-family: "Kanit";
     /* font-family: "Raleway"; */
 }
@@ -30,5 +30,34 @@ button:hover a{
 button a{
     text-decoration: none;
     color: white;
+}
+
+.fondo button > *{
+    width: 2rem;
+}
+.fondo button{
+    border-radius: 50%;
+}
+.fondo button:first-child:hover img{
+    filter: invert(100);
+}
+
+.fondo > button{
+    display: none;
+}
+.fondo .activo{
+    display: block;
+}
+
+.margen{
+    margin: 2%;
+}
+
+.white{
+    background-color: white;
+}
+
+.dark{
+    background-color: rgba(0, 0, 0, 0.658);
 }
 

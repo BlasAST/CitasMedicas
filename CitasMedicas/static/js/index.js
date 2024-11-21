@@ -5,6 +5,7 @@ function iniciar(){
         // Primera redireccion de la pagina de inicio a seleccion de
         // Inicio de sesión o registro
         redirecciones1();
+        cambiarFondo();
     }
     if(window.location.pathname=='/logReg'){
         // Redireccion segun se pulse el boton de inicio de sesión o register
@@ -24,6 +25,30 @@ function redirecciones1(){
     botonIniReg.addEventListener("click",()=>{
         window.location.href='/logReg';
     })
+}
+
+function cambiarFondo(){
+    let botones = document.querySelector(".fondo");
+    let header = document.querySelector(".header");
+    let container = document.querySelector(".container");
+    console.log(botones.firstElementChild)
+    console.log(header,container);
+
+    botones.lastElementChild.addEventListener("click",()=>{
+        botones.lastElementChild.classList.toggle("activo");
+        botones.firstElementChild.classList.toggle("activo");
+        header.classList.toggle("dark");
+        container.classList.toggle("white");
+        container.classList.toggle("dark");
+    })
+    botones.firstElementChild.addEventListener("click",()=>{
+        botones.firstElementChild.classList.toggle("activo");
+        botones.lastElementChild.classList.toggle("activo");
+        header.classList.toggle("white");
+        container.classList.toggle("white");
+        container.classList.toggle("dark");
+    })
+    
 }
 
 function redirecciones2(){
