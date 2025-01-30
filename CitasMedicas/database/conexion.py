@@ -4,10 +4,10 @@ from mysql.connector import Error
 def conectado():
     try:
         connection = mysql.connector.connect(
-            host = 'localhost',
-            database = 'citasmedicas',
+            host = 'mysql_citas_medicas',
+            database = 'citas_medicas',
             user = 'root',
-            password = ''
+            password = 'blas1234'
         )
         if connection.is_connected():
             db_info = connection.get_server_info()

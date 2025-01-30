@@ -1,0 +1,43 @@
+services:
+  mysql:
+    image: mysql
+    container_name: mysql_citas_medicas
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: blas1234
+      MYSQL_DATABASE: citas_medicas
+    networks:
+      - red_citas_medicas
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin_citas_medicas
+    restart: always
+    ports:
+      - "8080:80"
+    networks:
+      - red_citas_medicas
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: blas1234
+  
+  python:
+    build: .
+    restart: always
+    container_name: python_citas_medicas
+    depends_on:
+      - mysql
+    ports:
+      - "80:5000"
+    volumes:
+      - .:/app
+    networks:
+      - red_citas_medicas
+
+networks:
+  red_citas_medicas:
+    driver: bridge
+volumes:
+  volumen_citas_medicas:
+
+
+
