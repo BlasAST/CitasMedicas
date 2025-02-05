@@ -4,7 +4,7 @@ window.document.addEventListener("DOMContentLoaded",iniciar);
 function iniciar(){
     formularioEnviado();
 }
-let expUsuario = /^\w{5,}$/;
+let expUsuario = /^\w{2,}$/;
 let expContrasenia =  /./;
 function formularioEnviado(){
     let formulario = document.querySelector('form');
@@ -13,6 +13,8 @@ function formularioEnviado(){
         let inputs = formulario.querySelectorAll('input');
         if(expUsuario.test(inputs[0].value) && expContrasenia.test(inputs[1].value)){
             envioFormularioInicioSesion(inputs[0].value,inputs[1].value)
+        }else{
+            alerta("Error al leer campos","Introduce el usuario y contraseña","orange",2000);
         }
     })
 }
@@ -29,11 +31,10 @@ async function envioFormularioInicioSesion(user,contrasenia){
     }
 }
 
-
 function comprobacionInicioSesion(datos){
     if (datos.estado != false){
-        redireccionHome();
+        alerta("Inicio de sesión correcto","Redirigiendo a la pagina principal","green",2000,redireccionHome);
     }else{
-        console.log("Error en la autentificación");
+        alerta("Error de autentificación","El usuario o contraseña son incorrectos","red",2000);
     }
 }

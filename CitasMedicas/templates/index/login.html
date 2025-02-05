@@ -19,7 +19,7 @@
                 <label for="contrasenia">Contraseña</label>
                 <input type="password" name="contrasenia">
             </div>
-            <button id="submit">Iniciar Sesión</button>
+            <button id="submit" class="comprobar">Iniciar Sesión</button>
         </div>
         <div>
             <a href="/registrarse">Registrarse</a>
@@ -27,6 +27,8 @@
             <a href="/">Volver</a>
         </div>
     </form>
+    {% include 'partials/alerta.html' %}
+    
 </div>
 
 

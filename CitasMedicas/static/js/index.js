@@ -76,3 +76,17 @@ function redirecciones4(){
 function redireccionHome(){
     window.location.href="/home";
 }
+
+function alerta(cabecera,mensaje,color,tiempo,funcion){
+    let alerta= document.querySelector('.alerta');
+    alerta.style.backgroundColor=color;
+    let cabeza=alerta.querySelector(":first-child");
+    cabeza.textContent="";
+    cabeza.appendChild(document.createTextNode(cabecera));
+    let mesage= alerta.querySelector(":last-child");
+    mesage.textContent="";
+    mesage.appendChild(document.createTextNode(mensaje));
+    alerta.style.display="flex";
+    setTimeout(()=>{alerta.style.display="none";if(funcion) funcion();},tiempo);
+    
+}
